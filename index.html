@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Bridgeroot – Invest in projects across Africa</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;700&family=Public+Sans:wght@400;500;600&display=swap">
+<style>
+:root{--bg:#f6f7f5;--card:#fff;--ink:#14202e;--mut:#4f5b69;--line:#d6ddd9;--ind:#1f3478;--grn:#1b6446;--gold:#d9a22b;--on:#fff;--warn:#fbf1d3;--err:#a3281f;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0f1620;--card:#18222f;--ink:#eef2f5;--mut:#aab6c2;--line:#2b394a;--ind:#9db4ff;--grn:#5fcf9d;--on:#0f1620;--warn:#33290f;--err:#ff9a90}}
+:root[data-theme="dark"]{--bg:#0f1620;--card:#18222f;--ink:#eef2f5;--mut:#aab6c2;--line:#2b394a;--ind:#9db4ff;--grn:#5fcf9d;--on:#0f1620;--warn:#33290f;--err:#ff9a90}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}*,*:before,*:after{box-sizing:inherit}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 1rem/1.6 "Public Sans",system-ui,sans-serif}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--card)}
+h1,h2,h3{font-family:"Bricolage Grotesque","Public Sans",system-ui,sans-serif;line-height:1.15;margin:0 0 .5em}
+h1{font-size:clamp(2rem,5vw,3.2rem);max-width:18ch}h2{font-size:1.6rem}h3{font-size:1.15rem}
+a{color:var(--ind)}p{margin:0 0 1em}.wrap{max-width:1020px;margin:0 auto;padding:0 20px}
+header.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:11;background:var(--card);border-bottom:1px solid var(--line)}
+header.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:12px;min-height:60px;flex-wrap:wrap}
+.brand{font:700 1.25rem "Bricolage Grotesque",sans-serif;color:var(--ink);text-decoration:none}.brand span{color:var(--grn)}
+nav.r{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.btn,button{font:600 .95rem "Public Sans",sans-serif;background:var(--ind);color:var(--on);border:2px solid var(--ind);border-radius:8px;padding:10px 16px;cursor:pointer;text-decoration:none;display:inline-block;min-height:44px}
+.btn.ghost,button.ghost{background:transparent;color:var(--ind)}button.sm{padding:6px 12px;min-height:36px}
+:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+.hero{padding:56px 20px 40px}.lead{font-size:1.15rem;max-width:56ch;color:var(--mut)}.row{display:flex;gap:10px;flex-wrap:wrap}
+.fine{font-size:.85rem;color:var(--mut)}
+.band{height:34px;background:radial-gradient(circle,var(--gold) 0 3px,transparent 4px) 0 0/24px 24px,repeating-linear-gradient(45deg,var(--ind) 0 12px,color-mix(in srgb,var(--ind) 75%,#888) 12px 24px)}
+section.s{padding:44px 0;border-bottom:1px solid var(--line)}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:16px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:18px}
+.tag{display:inline-block;font-size:.78rem;border:1px dashed var(--mut);border-radius:20px;padding:1px 10px;color:var(--mut);margin-bottom:8px}
+ol.steps{padding-left:1.2em;max-width:62ch}ol.steps li{margin-bottom:.7em}
+.note{background:var(--warn);border-radius:10px;padding:14px 18px;max-width:70ch}
+footer{padding:28px 0;color:var(--mut);font-size:.9rem}footer a{color:var(--mut);font-size:.8rem}
+main:focus{outline:none}.pad{padding:28px 0 60px}
+.auth{max-width:440px;margin:36px auto}
+label{display:block;font-weight:500;margin-bottom:14px}
+input,select,textarea{display:block;width:100%;margin-top:4px;font:inherit;color:var(--ink);background:var(--card);border:1px solid var(--mut);border-radius:8px;padding:10px;min-height:44px}
+textarea{min-height:96px}.two{display:grid;grid-template-columns:1fr 1fr;gap:12px}@media(max-width:560px){.two{grid-template-columns:1fr}}
+.hint{font-weight:400;font-size:.85rem;color:var(--mut)}.err{color:var(--err);font-weight:600;min-height:1.4em}
+.tabs{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:22px;border-bottom:1px solid var(--line);padding-bottom:10px}
+.tabs button{background:transparent;color:var(--ink);border-color:transparent}.tabs button[aria-current=page]{border-color:var(--ind);color:var(--ind)}
+.list{display:grid;gap:10px}.item{display:flex;justify-content:space-between;gap:12px;align-items:center;flex-wrap:wrap}
+.bd{display:inline-flex;align-items:center;gap:6px;font-size:.85rem;font-weight:600;border:1px solid var(--mut);border-radius:20px;padding:2px 10px;white-space:nowrap}
+.bd i{width:9px;height:9px;border-radius:50%;background:var(--c)}
+.track{list-style:none;display:flex;gap:6px;padding:0;margin:14px 0;flex-wrap:wrap}.track li{flex:1;min-width:110px;border-top:5px solid var(--line);padding-top:6px;font-size:.85rem;color:var(--mut)}
+.track li.done{border-color:var(--grn);color:var(--ink)}.track li.now{border-color:var(--gold);color:var(--ink);font-weight:600}
+.msg{border-left:4px solid var(--line);padding:4px 12px;margin-bottom:10px}.msg.team{border-color:var(--grn)}.msg p{margin:2px 0}.msg time,.mut{color:var(--mut);font-size:.85rem}
+table{width:100%;border-collapse:collapse}th,td{text-align:left;padding:8px;border-bottom:1px solid var(--line);vertical-align:top}.scroll{overflow-x:auto}
+.upd img{max-width:100%;border-radius:8px;margin:6px 0}.stat{font:700 1.8rem "Bricolage Grotesque",sans-serif}
+#toast{position:fixed;left:50%;transform:translateX(-50%);bottom:calc(20px + env(safe-area-inset-bottom,0px));background:var(--ink);color:var(--bg);padding:10px 18px;border-radius:8px;z-index:20;display:none}
+</style></head><body>
+<header class="top"><div class="wrap"><a class="brand" href="#">Bridge<span>root</span></a><nav class="r" id="nav" aria-label="Main"></nav></div></header>
+<main id="app" tabindex="-1"></main>
+<div id="toast" role="status" aria-live="polite"></div>
+<script>
+const KEY='bridgeroot-demo-v1',ST=['Draft','Submitted','In review','Needs more information','Quotation sent','Quotation accepted','Project active','Not proceeding'],
+COL=['#8a94a0','#1f3478','#d9a22b','#c0562f','#7a3fb0','#1b6446','#1b6446','#6b6b6b'],
+SECT=['Housing and estates','Farming and agribusiness','Local business and markets','Other'],
+CTRY=['Ghana','Nigeria','Kenya','Rwanda','Tanzania','Uganda','Senegal',"Côte d’Ivoire",'South Africa','Ethiopia','Egypt','Morocco','Zambia','Other'],
+CUR=['USD','GBP','EUR','NGN','GHS','KES','ZAR'],
+SD={Draft:'Saved only for you. Submit it when you are ready.',Submitted:'We have your proposal. The team will begin review shortly.','In review':'The team is reading your proposal.','Needs more information':'The team has questions. Please reply and update your proposal.','Quotation sent':'A quotation is ready for you to review.','Quotation accepted':'You accepted the quotation. The team will confirm next steps.','Project active':'Your project is underway. Progress updates appear below.','Not proceeding':'The team does not recommend going ahead. See the review notes.'},
+TR=['Submitted','In review','Quotation sent','Quotation accepted','Project active'],TI={Draft:-1,Submitted:0,'In review':1,'Needs more information':1,'Quotation sent':2,'Quotation accepted':3,'Project active':4,'Not proceeding':-2};
+const $=s=>document.querySelector(s),esc=s=>String(s??'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c])),now=()=>new Date().toISOString(),
+fd=d=>d?new Date(d).toLocaleDateString('en-GB',{day:'numeric',month:'short',year:'numeric'}):'',ft=d=>fd(d)+', '+new Date(d).toLocaleTimeString('en-GB',{hour:'2-digit',minute:'2-digit'}),
+money=(a,c)=>a==null?'':new Intl.NumberFormat('en',{style:'currency',currency:c,maximumFractionDigits:0}).format(a);
+const day=n=>new Date(Date.now()-n*864e5).toISOString();
+function seed(){return{users:[{id:'u1',name:'Amara Okafor',email:'amara@example.com',pw:'demo1234',role:'client',country:'United Kingdom'},{id:'a1',name:'Tendai Moyo',email:'staff@bridgeroot.example',pw:'admin1234',role:'admin'}],
+proposals:[{id:'p1',uid:'u1',title:'Four rental homes near Kumasi',country:'Ghana',sector:SECT[0],desc:'Build four two-bedroom rental homes on land my family already owns, aimed at young professionals.',goals:'Steady rental income and a asset my family can keep.',budget:120000,cur:'USD',status:'Project active',notes:[{t:day(30),text:'Land documents reviewed. The team will arrange a site survey.',pub:1}],quote:{amount:9500,cur:'USD',scope:'Project management and site supervision for 12 months.',until:day(-20),state:'accepted'},check:{flags:[]},created:day(40)},
+{id:'p2',uid:'u1',title:'Cold room for a produce market',country:'Kenya',sector:SECT[2],desc:'A shared cold room so traders at a regional market lose less produce. I have not set a budget yet.',goals:'Reduce spoilage and earn a modest return from rental fees.',budget:null,cur:'USD',status:'Quotation sent',notes:[{t:day(4),text:'We need a costed plan before suggesting a budget. Quotation attached.',pub:1}],quote:{amount:3200,cur:'USD',scope:'Feasibility study, supplier shortlist and costed plan.',until:day(-14),state:'sent'},check:{flags:['No budget given. The team will prepare a quotation.']},created:day(8)}],
+updates:[{id:'n1',pid:'p1',kind:'Milestone',title:'Site survey completed',text:'The surveyor has marked the plot boundaries and confirmed access from the main road.',date:day(14),docs:['Survey-report.pdf'],photo:''},{id:'n2',pid:'p1',kind:'Update',title:'Foundations started',text:'Clearing is finished and the first foundation trenches are dug. Weather has been dry.',date:day(2),docs:[],photo:''}],
+msgs:[{id:'m1',uid:'u1',pid:'p2',from:'team',text:'Hello Amara, the quotation covers the study only. Tell us if you want to talk through the scope.',t:day(3)}],
+log:[{t:day(3),who:'Tendai Moyo',what:'Sent quotation for “Cold room for a produce market”',pid:'p2'}]}}
+let D;try{D=JSON.parse(localStorage.getItem(KEY))}catch(e){}if(!D)D=seed();
+let me=null,ui={v:'home',id:null};try{me=sessionStorage.getItem('br-me')}catch(e){}
+const save=()=>{try{localStorage.setItem(KEY,JSON.stringify(D))}catch(e){toast('Saved for this visit only. Browser storage is unavailable.')}},
+U=id=>D.users.find(u=>u.id===id),P=id=>D.proposals.find(p=>p.id===id),isA=()=>me&&U(me)?.role==='admin',
+lg=(what,pid)=>D.log.push({t:now(),who:U(me).name,what,pid:pid||null}),
+toast=m=>{const t=$('#toast');t.textContent=m;t.style.display='block';clearTimeout(toast.h);toast.h=setTimeout(()=>t.style.display='none',3200)},
+err=m=>{const e=$('#err');if(e)e.textContent=m},
+opt=(l,s)=>l.map(x=>`<option${x===s?' selected':''}>${esc(x)}</option>`).join(''),
+bd=s=>`<span class="bd" style="--c:${COL[ST.indexOf(s)]}"><i></i>${s}</span>`,
+tab=(v,t)=>`<button data-a="go" data-v="${v}"${ui.v===v?' aria-current="page"':''}>${t}</button>`;
+function autoCheck(p){const f=[];if(p.desc.length<120)f.push('The description is short. Add location, size and timeline if you can.');if(!p.budget)f.push('No budget given. The team will prepare a quotation.');
+f.push({[SECT[0]]:'Housing: do you hold the land title, or do you need help finding land?',[SECT[1]]:'Farming: please share land size, crop or livestock, and who will buy the output.',[SECT[2]]:'Business: please share ownership structure and any local partners.'}[p.sector]||'Please say how you would like to be involved day to day.');return{flags:f,at:now()}}
+/* ---------- views ---------- */
+const home=()=>`<section class="hero wrap"><h1>Back projects across Africa, from wherever you live.</h1>
+<p class="lead">Tell us what you want to build, grow or buy. Our business development team reviews every proposal with you, and you follow each step in your own private portal.</p>
+<p class="row"><a class="btn" href="#signup">Sign up</a><a class="btn ghost" href="#login">Log in</a></p><p class="mut" style="max-width:56ch">Why invest at home? Because you know these places best. Your savings can become homes, farms and businesses that your family and community can see, use and be proud of.</p></section><div class="band" aria-hidden="true"></div>
+<section class="s wrap"><h2>Who we serve</h2><div class="grid">
+<div class="card"><h3>Africans at home</h3><p>People in Lagos, Nairobi, Accra and beyond who want to put savings into something local and lasting.</p></div>
+<div class="card"><h3>The diaspora</h3><p>People abroad who want a trusted team on the ground and clear, dated updates on their project.</p></div>
+<div class="card"><h3>Families and groups</h3><p>Relatives and friends pooling funds for a shared plan, such as a family estate or a farm.</p></div></div></section>
+<section class="s wrap"><h2>Projects you can explore</h2><p class="mut">These are illustrative examples to show the range. They are not live offers, and the figures are not forecasts.</p><div class="grid">
+${[['Homes and estates','Build a small rental block or a family estate on land you already hold.','Typical question: who holds the title?'],['Farming','Plan a cassava, poultry or horticulture venture with local operators.','Typical question: who will buy the output?'],['Local business and markets','Back a shop, cold room, workshop or market stall with a clear plan.','Typical question: who runs it day to day?']].map(c=>`<div class="card"><span class="tag">Illustrative example</span><h3>${c[0]}</h3><p>${c[1]}</p><p class="fine">${c[2]}</p></div>`).join('')}</div></section>
+<section class="s wrap"><h2>How review works</h2><ol class="steps">
+<li><b>Sign up</b> and open your private portal.</li><li><b>Submit a proposal</b>: describe the project, pick a country and sector, share your goals. A budget is optional.</li>
+<li><b>Review.</b> An automated check flags missing details. Our business development team then reads every proposal and makes the decisions.</li>
+<li><b>Quotation.</b> If you did not set a budget, we prepare a quotation for you to accept or discuss.</li>
+<li><b>Progress.</b> Once a project starts, you see dated updates, photos and documents, and can ask questions at any time.</li></ol>
+<p class="note">Software never approves an investment. We do not guarantee returns, and every project carries risk. Please read each quotation and note carefully.</p></section>
+<footer><div class="wrap">© Bridgeroot (placeholder company name) · Illustrative content only · <a href="#admin-login">Admin</a></div></footer>`;
+const authForm=(k)=>{const a=k==='admin';return`<div class="auth card"><h1 style="font-size:1.8rem">${k==='signup'?'Create your account':a?'Staff sign-in':'Log in'}</h1>
+<p class="note fine">Prototype: sign-in is simulated in your browser. Do not enter real passwords or documents.${k==='login'?'<br>Demo client: amara@example.com / demo1234':''}${a?'<br>Demo staff: staff@bridgeroot.example / admin1234':''}</p>
+<form data-f="${k==='signup'?'signup':'login'}"><input type="hidden" name="role" value="${a?'admin':'client'}">
+${k==='signup'?`<label>Full name<input name="name" required autocomplete="name"></label><label>Country where you live<select name="country">${opt(['Nigeria','Ghana','Kenya','United Kingdom','United States','Canada','South Africa','Other'])}</select></label>`:''}
+<label>Email<input type="email" name="email" required autocomplete="email"></label><label>Password${k==='signup'?' <span class="hint">(at least 8 characters)</span>':''}<input type="password" name="pw" required minlength="${k==='signup'?8:1}"></label>
+<p class="err" id="err" role="alert"></p><button>${k==='signup'?'Create account':'Log in'}</button></form>
+<p class="fine">${k==='signup'?'Already registered? <a href="#login">Log in</a>':a?'<a href="#">Back to site</a>':'New here? <a href="#signup">Sign up</a>'}</p></div>`};
+const thread=(uid,pid)=>{const m=D.msgs.filter(x=>x.uid===uid&&(x.pid||null)===(pid||null));return(m.length?m.map(x=>`<div class="msg ${x.from}"><b>${x.from==='team'?'Bridgeroot team':esc(U(uid).name)}</b> <time>${ft(x.t)}</time><p>${esc(x.text)}</p></div>`).join(''):'<p class="mut">No messages yet. Ask anything and the team will reply here.</p>')+
+`<form data-f="reply"><input type="hidden" name="uid" value="${uid}"><input type="hidden" name="pid" value="${pid||''}"><label>Your message<textarea name="text" required></textarea></label><button class="sm">Send message</button></form>`};
+const updates=pid=>{const u=D.updates.filter(x=>x.pid===pid).sort((a,b)=>b.date.localeCompare(a.date));return u.length?u.map(x=>`<div class="card upd" style="margin-bottom:10px"><span class="bd" style="--c:${x.kind==='Milestone'?'#1b6446':'#1f3478'}"><i></i>${x.kind}</span> <span class="mut">${fd(x.date)}</span><h3>${esc(x.title)}</h3><p>${esc(x.text)}</p>${x.photo?`<img src="${x.photo}" alt="Project photo for ${esc(x.title)}">`:''}${x.docs.length?`<p class="fine">Documents: ${x.docs.map(esc).join(', ')}</p>`:''}</div>`).join(''):'<p class="mut">No progress updates yet. They appear here once your project starts.</p>'};
+const tracker=s=>{const i=TI[s];return s==='Not proceeding'?'':`<ol class="track" aria-label="Review progress">${TR.map((t,k)=>`<li class="${k<i?'done':k===i?'now':''}">${t}</li>`).join('')}</ol>`};
+const quoteCard=(p,client)=>{const q=p.quote;if(!q)return'';return`<div class="card" style="margin:14px 0"><h3>Quotation: ${money(q.amount,q.cur)}</h3><p>${esc(q.scope)}</p><p class="fine">Valid until ${fd(q.until)}. This is a fee for our services, not a promise of investment returns.</p>
+${client&&q.state==='sent'?`<div class="row"><button data-a="accept" data-id="${p.id}">Accept quotation</button><button class="ghost" data-a="discuss" data-id="${p.id}">Discuss it with the team</button></div>`:`<p><b>Status: ${{sent:'Sent, awaiting client',accepted:'Accepted',discussing:'Client wants to discuss'}[q.state]}</b></p>`}</div>`};
+const propForm=p=>{p=p||{};return`<h2>${p.id?'Edit proposal':'New proposal'}</h2><form data-f="prop" class="card"><input type="hidden" name="id" value="${p.id||''}">
+<label>Project name<input name="title" required value="${esc(p.title)}"></label><div class="two"><label>Country<select name="country">${opt(CTRY,p.country)}</select></label><label>Sector<select name="sector">${opt(SECT,p.sector)}</select></label></div>
+<label>Describe the project<span class="hint"> Where, how big, and what you want built or started.</span><textarea name="desc" rows="5">${esc(p.desc)}</textarea></label>
+<label>Your goals<span class="hint"> For example income, a family asset, or local jobs. Outcomes are never guaranteed.</span><textarea name="goals">${esc(p.goals)}</textarea></label>
+<div class="two"><label>Budget <span class="hint">(optional: leave blank and we will prepare a quotation)</span><input type="number" min="0" name="budget" value="${p.budget??''}"></label><label>Currency<select name="cur">${opt(CUR,p.cur)}</select></label></div>
+<p class="err" id="err" role="alert"></p><div class="row"><button name="b" value="draft" class="ghost" formnovalidate>Save draft</button><button name="b" value="send">Submit for review</button></div></form>`};
+function clientView(){const u=U(me),mine=D.proposals.filter(p=>p.uid===me),t=`<h1 style="font-size:1.9rem">Welcome, ${esc(u.name.split(' ')[0])}</h1>`,tabs=`<div class="tabs">${tab('home','Overview')}${tab('new','New proposal')}${tab('msgs','Contact the team')}${tab('me','Profile')}</div>`;
+if(ui.v==='new')return t+tabs+propForm();
+if(ui.v==='edit')return t+tabs+propForm(P(ui.id));
+if(ui.v==='msgs')return t+tabs+`<h2>Contact the team</h2><div class="card"><form data-f="gen"><label>About<select name="pid"><option value="">General question</option>${mine.map(p=>`<option value="${p.id}">${esc(p.title)}</option>`).join('')}</select></label><p class="mut">Choose a project, then write below. Replies appear in the thread for that project.</p></form>${mine.map(p=>`<h3>${esc(p.title)}</h3>${thread(me,p.id)}`).join('')}<h3>General questions</h3>${thread(me,null)}</div>`;
+if(ui.v==='me')return t+tabs+`<h2>Your profile</h2><form data-f="profile" class="card"><label>Full name<input name="name" value="${esc(u.name)}" required></label><label>Email<input value="${esc(u.email)}" disabled></label><label>Country where you live<input name="country" value="${esc(u.country)}"></label><button>Save profile</button></form>`;
+if(ui.v==='view'){const p=P(ui.id);return t+tabs+`<p><a href="#portal" data-a="go" data-v="home">Back to overview</a></p><h2>${esc(p.title)}</h2><p>${bd(p.status)} <span class="mut">${esc(p.sector)}, ${esc(p.country)}${p.budget?' · Budget '+money(p.budget,p.cur):''}</span></p><p>${SD[p.status]}</p>${tracker(p.status)}
+${['Draft','Submitted','Needs more information'].includes(p.status)?`<button class="ghost sm" data-a="edit" data-id="${p.id}">Edit proposal</button>`:''}
+${quoteCard(p,1)}<h3>Review notes</h3>${p.notes.filter(n=>n.pub).map(n=>`<div class="msg team"><time>${fd(n.t)}</time><p>${esc(n.text)}</p></div>`).join('')||'<p class="mut">No notes yet.</p>'}
+${p.check?.flags.length&&p.status!=='Draft'?`<div class="note fine"><b>Automated first-pass check</b> (it only flags missing details and decides nothing):<ul>${p.check.flags.map(f=>`<li>${esc(f)}</li>`).join('')}</ul></div>`:''}
+<h3>Project updates</h3>${updates(p.id)}<h3>Messages</h3>${thread(me,p.id)}`}
+return t+tabs+`<div class="row" style="justify-content:space-between"><h2>Your proposals</h2><button data-a="go" data-v="new">New proposal</button></div><div class="list">${mine.length?mine.map(p=>`<div class="card item"><div><h3 style="margin:0">${esc(p.title)}</h3><span class="mut">${esc(p.sector)}, ${esc(p.country)}</span></div><div>${bd(p.status)} <button class="ghost sm" data-a="view" data-id="${p.id}">${p.status==='Draft'?'Continue':'Open'}</button></div></div>`).join(''):'<p class="mut">No proposals yet. Start with a short description of your idea.</p>'}</div>
+<h2 style="margin-top:28px">Latest project updates</h2>${D.updates.filter(x=>mine.some(p=>p.id===x.pid)).sort((a,b)=>b.date.localeCompare(a.date)).slice(0,3).map(x=>`<div class="card" style="margin-bottom:8px"><span class="mut">${fd(x.date)} · ${esc(P(x.pid).title)}</span><h3 style="margin:2px 0">${esc(x.title)}</h3></div>`).join('')||'<p class="mut">Updates will show here once a project is active.</p>'}`}
+function adminView(){const t='<h1 style="font-size:1.9rem">Staff dashboard</h1>',tabs=`<div class="tabs">${tab('home','Overview')}${tab('props','Proposals')}${tab('clients','Clients')}${tab('msgs','Messages')}${tab('log','Activity log')}</div>`;
+const pr=D.proposals.filter(p=>p.status!=='Draft'),row=p=>`<tr><td>${esc(p.title)}<br><span class="mut">${esc(U(p.uid).name)} · ${esc(p.country)}</span></td><td>${bd(p.status)}</td><td><button class="sm ghost" data-a="aview" data-id="${p.id}">Review</button></td></tr>`;
+if(ui.v==='props')return t+tabs+`<h2>All proposals</h2><div class="scroll"><table><tr><th>Proposal</th><th>Status</th><th></th></tr>${pr.map(row).join('')}</table></div>`;
+if(ui.v==='clients')return t+tabs+`<h2>Clients</h2><div class="scroll"><table><tr><th>Client</th><th>Lives in</th><th>Proposals and projects</th></tr>${D.users.filter(u=>u.role==='client').map(u=>`<tr><td>${esc(u.name)}<br><span class="mut">${esc(u.email)}</span></td><td>${esc(u.country)}</td><td>${D.proposals.filter(p=>p.uid===u.id).map(p=>`<a href="#admin" data-a="aview" data-id="${p.id}">${esc(p.title)}</a> ${bd(p.status)}`).join('<br>')||'<span class="mut">None</span>'}</td></tr>`).join('')}</table></div>`;
+if(ui.v==='log')return t+tabs+`<h2>Activity log</h2><div class="scroll"><table><tr><th>When</th><th>Who</th><th>What</th></tr>${[...D.log].reverse().map(l=>`<tr><td>${ft(l.t)}</td><td>${esc(l.who)}</td><td>${esc(l.what)}</td></tr>`).join('')}</table></div>`;
+if(ui.v==='msgs'){const k=[...new Set(D.msgs.map(m=>m.uid+'|'+(m.pid||'')))];return t+tabs+`<h2>Client messages</h2>${k.map(x=>{const[u,p]=x.split('|');return`<div class="card" style="margin-bottom:12px"><h3>${esc(U(u).name)}: ${p?esc(P(p).title):'General question'}</h3>${thread(u,p)}</div>`}).join('')||'<p class="mut">No messages yet.</p>'}`}
+if(ui.v==='aview'){const p=P(ui.id),c=U(p.uid);return t+tabs+`<p><a href="#admin" data-a="go" data-v="props">Back to proposals</a></p><h2>${esc(p.title)}</h2><p>${bd(p.status)} <span class="mut">${esc(c.name)} (${esc(c.email)}) · ${esc(p.sector)}, ${esc(p.country)} · ${p.budget?money(p.budget,p.cur):'No budget set'}</span></p>
+<div class="card"><p><b>Description:</b> ${esc(p.desc)}</p><p><b>Goals:</b> ${esc(p.goals)}</p></div>
+<div class="note fine" style="margin-top:12px"><b>Automated first-pass check (rule-based, flags only):</b><ul>${(p.check?.flags||['Not run yet.']).map(f=>`<li>${esc(f)}</li>`).join('')}</ul>A staff member makes every decision.</div>
+<h3 style="margin-top:20px">Status and notes</h3><form data-f="status" class="card"><input type="hidden" name="id" value="${p.id}"><div class="two"><label>Status<select name="status">${opt(ST.slice(1),p.status)}</select></label><label>Review note<textarea name="note"></textarea></label></div><label><input type="checkbox" name="pub" checked style="display:inline;width:auto;min-height:0"> Show this note to the client</label><button class="sm">Update status</button></form>
+${p.notes.length?p.notes.map(n=>`<div class="msg"><time>${fd(n.t)} · ${n.pub?'Shared with client':'Internal'}</time><p>${esc(n.text)}</p></div>`).join(''):''}
+<h3 style="margin-top:20px">Quotation</h3>${quoteCard(p,0)}<form data-f="quote" class="card"><input type="hidden" name="id" value="${p.id}"><div class="two"><label>Amount<input type="number" name="amount" min="0" required></label><label>Currency<select name="cur">${opt(CUR,p.cur)}</select></label></div><label>What it covers<textarea name="scope" required></textarea></label><label>Valid until<input type="date" name="until" required></label><button class="sm">Prepare and send quotation</button></form>
+<h3 style="margin-top:20px">Publish a progress update</h3><form data-f="upd" class="card"><input type="hidden" name="id" value="${p.id}"><div class="two"><label>Type<select name="kind"><option>Update</option><option>Milestone</option></select></label><label>Date<input type="date" name="date" value="${now().slice(0,10)}" required></label></div><label>Title<input name="title" required></label><label>Details<textarea name="text" required></textarea></label><label>Photo (optional)<input type="file" name="photo" accept="image/*"></label><label>Documents (names are stored in this prototype)<input type="file" name="docs" multiple></label><button class="sm">Publish to client</button></form>
+<h3 style="margin-top:20px">Edit record</h3><form data-f="rec" class="card"><input type="hidden" name="id" value="${p.id}"><label>Project name<input name="title" value="${esc(p.title)}" required></label><div class="two"><label>Country<select name="country">${opt(CTRY,p.country)}</select></label><label>Sector<select name="sector">${opt(SECT,p.sector)}</select></label></div><button class="sm ghost">Save record</button></form>
+<h3 style="margin-top:20px">Messages with client</h3>${thread(p.uid,p.id)}<h3>History for this project</h3><div class="scroll"><table>${D.log.filter(l=>l.pid===p.id).reverse().map(l=>`<tr><td>${ft(l.t)}</td><td>${esc(l.who)}</td><td>${esc(l.what)}</td></tr>`).join('')||'<tr><td class="mut">No actions yet.</td></tr>'}</table></div>`}
+const cnt=s=>pr.filter(p=>p.status===s).length;return t+tabs+`<div class="grid">${['Submitted','In review','Needs more information','Quotation sent','Project active'].map(s=>`<div class="card"><div class="stat">${cnt(s)}</div>${s}</div>`).join('')}</div><h2 style="margin-top:28px">Needs attention</h2><div class="scroll"><table><tr><th>Proposal</th><th>Status</th><th></th></tr>${pr.filter(p=>['Submitted','In review','Needs more information'].includes(p.status)).map(row).join('')||'<tr><td class="mut">Nothing waiting.</td></tr>'}</table></div>`}
+/* ---------- routing ---------- */
+function render(){const h=location.hash.slice(1);let v,title='Bridgeroot';
+if(h==='admin'&&isA())v=adminView();else if(h==='admin'||h==='admin-login')v=authForm('admin');
+else if(h==='portal'&&me&&!isA())v=`<div class="wrap pad">${clientView()}</div>`;else if(h==='portal'||h==='login')v=authForm('login');
+else if(h==='signup')v=authForm('signup');else v=home();
+if(h==='admin'&&isA())v=`<div class="wrap pad">${v}</div>`;
+$('#app').innerHTML=v;const ins=(h==='portal'&&me&&!isA())||(h==='admin'&&isA());
+$('#nav').innerHTML=me&&ins?`<span class="mut">${esc(U(me).name)}${isA()?' (staff)':''}</span><button class="ghost sm" data-a="out">Sign out</button>`:`<a class="btn ghost sm" href="#login">Log in</a><a class="btn sm" href="#signup">Sign up</a>`}
+const A={go:d=>{ui={v:d.v,id:null};render();scrollTo(0,0)},view:d=>{ui={v:'view',id:d.id};render();scrollTo(0,0)},edit:d=>{ui={v:'edit',id:d.id};render()},aview:d=>{ui={v:'aview',id:d.id};location.hash='#admin';render();scrollTo(0,0)},
+out:()=>{me=null;try{sessionStorage.removeItem('br-me')}catch(e){}ui={v:'home'};location.hash='#';render()},
+accept:d=>{const p=P(d.id);p.quote.state='accepted';p.status='Quotation accepted';lg('Accepted the quotation',p.id);save();render();toast('Quotation accepted.')},
+discuss:d=>{const p=P(d.id);p.quote.state='discussing';D.msgs.push({id:'m'+Date.now(),uid:me,pid:p.id,from:'client',text:'I’d like to discuss the quotation before deciding.',t:now()});lg('Asked to discuss the quotation',p.id);save();render();toast('The team has been notified. Reply below to add detail.')}};
+const F={login:d=>{const u=D.users.find(x=>x.email===d.email.trim().toLowerCase()&&x.pw===d.pw&&(x.role==='admin')===(d.role==='admin'));if(!u)return err('Email or password not recognised.');me=u.id;try{sessionStorage.setItem('br-me',me)}catch(e){}ui={v:'home'};location.hash=u.role==='admin'?'#admin':'#portal';render()},
+signup:d=>{const e=d.email.trim().toLowerCase();if(D.users.some(u=>u.email===e))return err('That email already has an account. Try logging in.');const u={id:'u'+Date.now(),name:d.name.trim(),email:e,pw:d.pw,role:'client',country:d.country};D.users.push(u);save();F.login({email:e,pw:d.pw,role:'client'})},
+profile:d=>{const u=U(me);u.name=d.name;u.country=d.country;save();render();toast('Profile saved.')},
+prop:(d,f,b)=>{const draft=b==='draft';if(!d.title.trim())return err('Add a project name.');if(!draft&&d.desc.trim().length<20)return err('Describe the project in at least a sentence or two.');
+let p=d.id?P(d.id):null;const was=p?.status;if(!p){p={id:'p'+Date.now(),uid:me,notes:[],created:now()};D.proposals.push(p)}
+Object.assign(p,{title:d.title.trim(),country:d.country,sector:d.sector,desc:d.desc,goals:d.goals,budget:d.budget?+d.budget:null,cur:d.cur});
+if(!draft){p.status=was==='Needs more information'?'In review':'Submitted';p.check=autoCheck(p)}else if(!was)p.status='Draft';lg(draft?'Saved draft':'Submitted proposal',p.id);save();ui={v:'view',id:p.id};render();toast(draft?'Draft saved.':'Proposal submitted for review.')},
+reply:d=>{if(!d.text.trim())return;D.msgs.push({id:'m'+Date.now(),uid:d.uid,pid:d.pid||null,from:isA()?'team':'client',text:d.text.trim(),t:now()});if(d.pid)lg(isA()?'Replied to client':'Client sent a message',d.pid);save();render();toast('Message sent.')},
+status:d=>{const p=P(d.id);p.status=d.status;if(d.note.trim())p.notes.push({t:now(),text:d.note.trim(),pub:d.pub?1:0});lg(`Set status to “${d.status}”${d.note.trim()?' with a note':''}`,p.id);save();render();toast('Status updated.')},
+quote:d=>{const p=P(d.id);p.quote={amount:+d.amount,cur:d.cur,scope:d.scope,until:d.until,state:'sent'};p.status='Quotation sent';lg(`Sent quotation of ${money(+d.amount,d.cur)}`,p.id);save();render();toast('Quotation sent to client.')},
+rec:d=>{const p=P(d.id);Object.assign(p,{title:d.title,country:d.country,sector:d.sector});lg('Edited project record',p.id);save();render();toast('Record saved.')},
+upd:async(d,f)=>{const p=P(d.id);let photo='';const pf=f.elements.photo.files[0];if(pf)photo=await shrink(pf);const docs=[...f.elements.docs.files].map(x=>x.name);
+D.updates.push({id:'n'+Date.now(),pid:p.id,kind:d.kind,title:d.title,text:d.text,date:new Date(d.date).toISOString(),docs,photo});lg(`Published ${d.kind.toLowerCase()}: ${d.title}`,p.id);save();render();toast('Published. The client can now see it.')},
+gen:()=>{}};
+const shrink=f=>new Promise(r=>{const i=new Image,u=URL.createObjectURL(f);i.onload=()=>{const s=Math.min(1,640/i.width),c=document.createElement('canvas');c.width=i.width*s;c.height=i.height*s;c.getContext('2d').drawImage(i,0,0,c.width,c.height);URL.revokeObjectURL(u);r(c.toDataURL('image/jpeg',.7))};i.onerror=()=>r('');i.src=u});
+document.addEventListener('click',e=>{const el=e.target.closest('[data-a]');if(!el)return;e.preventDefault();A[el.dataset.a]?.(el.dataset)});
+document.addEventListener('submit',async e=>{const f=e.target.closest('form[data-f]');if(!f)return;e.preventDefault();await F[f.dataset.f](Object.fromEntries(new FormData(f)),f,e.submitter?.value)});
+addEventListener('hashchange',()=>{render();scrollTo(0,0)});render();
+</script></body></html>
